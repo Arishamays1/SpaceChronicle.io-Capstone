@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema({
     },
     favorites:[{
         type:String,
-        default:'Got a favorite movie put it here!'
+        default:'Got a favorite? Put it here!'
     }]
 },
 {
