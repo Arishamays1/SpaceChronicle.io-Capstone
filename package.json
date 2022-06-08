@@ -11,6 +11,8 @@
     "mongoose": "^6.3.5",
     "morgan": "^1.10.0",
     "node": "^17.7.2",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "react-router-dom": "^6.3.0",
+    "react-toastify": "^9.0.4"
   }
 }

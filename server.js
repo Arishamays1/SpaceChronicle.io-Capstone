@@ -2,7 +2,7 @@
 //dependecies
 require('dotenv').config()
 const express = require('express')
-const {PORT = 4000, MONGODB_URI} = process.env
+const {PORT =9000, MONGODB_URI} = process.env
 const app = express()
 const cors = require('cors')
 const authRoutes = require('./Routes/AuthRoutes')
@@ -80,7 +80,7 @@ app.post('/register', async (req,res,next)=>{
     try{
         const foundUser = await User.exists({email:req.body.email})
         if(foundUser){
-            return res.send('Already have account')
+            return res.send('You already have account...')
         }
         const salt = await bcrypt.genSalt(process.SALT_ROUNDS)
         console.log(salt)
@@ -166,6 +166,24 @@ app.delete('/userpage/:id', async(req,res)=>{
         res.json(await db.User.findByIdAndRemove(req.params.id))
     }catch(error){
         res.status(400).json(error)
+    }
+})
+app.get('/discussion', async(req,res)=>{
+    try{
+        res.json(await db.Discussion.find({}))
+    }catch(error){
+        res.status(400).json(error)
+    }
+})
+
+app.post('/discussion', async(req,res, next)=>{
+    try{
+       res.json(await db.Discussion.create(req.body))
+
+    }catch(error){
+        console.log(error)
+        req.error = error
+        return next()
     }
 })
 
