@@ -24,7 +24,7 @@ Sandbox test: https://codesandbox.io/s/delicate-fog-oudjwz?file=/src/index.js
 -As a user, the profile page will have a bio, a changeable profile picture, a notes section to jot down thoughts, and their favorite data entries.
 
 # Technologies Used
--Node.Js, React, Express, Figma, Mongoose, MongoDB, NASA API, Netlify, Heroku
+-Node.Js, React, JavaScript, Express, Figma, Mongoose, MongoDB, NASA API, Netlify, Heroku
 
 # Stretch Goals
 - A search bar that allows the user to search through multiple entries and find similiar entries.
